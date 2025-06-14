@@ -5,3 +5,4 @@ httpx
 python-dotenv
 langchain
 loguru
+python-multipart
