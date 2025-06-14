@@ -1,0 +1,14 @@
+*.pyc
+__pycache__/
+.env
+
+# ignore uploads directory
+uploads/
+
+# ignore logs directory
+logs/
+
+# ignore virtual environment
+venv/
+# ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
