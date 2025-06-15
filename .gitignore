@@ -10,5 +10,6 @@ logs/
 
 # ignore virtual environment
 venv/
+.venv/
 # ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/

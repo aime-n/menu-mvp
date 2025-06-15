@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // Your existing "Python Debug" config (keep it if you use it for other debugging)
+        {
+            "name": "Python Debug",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${fileDirname}"
+        },
+        // NEW or MODIFIED CONFIGURATION FOR RUNNING AS MODULE
+        {
+            "name": "Run Current File as Module from Root",
+            "type": "python",
+            "request": "launch",
+            "module": "src.api.core.llm_clients", // <--- Hardcode the full module path or
+            // "module": "${relativeFileDirname}.${fileBasenameNoExtension}".replace(/\//g, '.').replace('src.', ''), // <--- More dynamic, needs testing
+            "args": [],
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}" // Ensure project root is in PYTHONPATH
+            },
+            "cwd": "${workspaceFolder}" // Crucial: Set CWD to the project root
+        }
+    ]
+}

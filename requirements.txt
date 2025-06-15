@@ -4,7 +4,9 @@ langgraph
 httpx
 python-dotenv
 langchain
+langsmith
 loguru
 python-multipart
 streamlit
 requests
+langchain_openai
