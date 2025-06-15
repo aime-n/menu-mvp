@@ -1,6 +1,6 @@
 from typing import Optional
 from langchain_openai import ChatOpenAI
-from src.api.core.config import settings
+from api.core.config import settings
 
 
 class ChatOpenRouter(ChatOpenAI):
@@ -14,4 +14,3 @@ class ChatOpenRouter(ChatOpenAI):
                          openai_api_key=api_key_value, 
                          model_name=model_name, 
                          **kwargs)
-

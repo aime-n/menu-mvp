@@ -11,3 +11,9 @@ streamlit
 requests
 langchain_openai
 ipython
+langgraph-cli[inmem]
+langchain-core
+sse-starlette
+langfuse
+aiopg
+psycopg2-binary

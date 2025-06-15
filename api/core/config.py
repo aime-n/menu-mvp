@@ -1,22 +1,23 @@
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache # For caching the settings instance
+from api.schemas.llm import ModelProvider, ModelName
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra='ignore')
 
-    LLM_PROVIDER: str = "openrouter"
+    PROJECT_NAME: str = "Menu AI API"
+    PROJECT_VERSION: str = "0.1.0"
+
+    LLM_PROVIDER: ModelProvider = ModelProvider.OPENROUTER
 
     OPENAI_API_KEY: SecretStr = Field(default_factory=lambda: SecretStr("")) # Use SecretStr for keys
     OPENROUTER_API_KEY: SecretStr = Field(default_factory=lambda: SecretStr(""))
     BASE_URL_OPENROUTER: str = "https://openrouter.ai/api/v1"
     TIMEOUT: int = 600
 
-    LLAMA_MODEL: str = "nvidia/llama-3.3-nemotron-super-49b-v1:free"
-    GEMMA_3_1B_MODEL: str = "google/gemma-3-1b-it:free"
-    GEMMA_3_27B_MODEL: str = "google/gemma-3-27b-it:free"
-    DEEPSEEK_V3_MODEL: str = "deepseek/deepseek-chat-v3-0324:free"
-    DEEPSEEK_R1_MODEL: str = "deepseek/deepseek-r1-zero:free"
+    DEFAULT_MODEL: ModelName = ModelName.DEEPSEEK_V3_MODEL
 
     # TODO: Add Google Gemini Keys?
     

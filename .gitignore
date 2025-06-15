@@ -18,3 +18,6 @@ venv/
 .vscode/
 # ignore Python bytecode files
 *.py[cod]
+
+# excluir checkpoint pckl
+*.pckl

@@ -16,5 +16,5 @@ def setup_logger():
 logger = setup_logger()
 
 # Example usage:
-# from src.api.utils.logger import logger
+# from api.utils.logger import logger
 # logger.info("Logger is set up and ready to use.")
