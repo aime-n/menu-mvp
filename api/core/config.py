@@ -25,16 +25,11 @@ class Settings(BaseSettings):
 
     # TODO: Add Google Gemini Keys?
     
-    # TODO Database configuration
-    # host, port, name, user, password
     SUPABASE_URL: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_KEY: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_DB_PASSWORD: SecretStr = Field(default_factory=lambda: SecretStr(""))
     SUPABASE_HOST: str = Field(default_factory=lambda: SecretStr(""))  
-
-    def __init__(self, **values):
-        super().__init__(**values)
-        self.DATABASE_URL = f"postgresql://postgres:{self.SUPABASE_DB_PASSWORD}@{self.SUPABASE_HOST}:5432/postgres"
+    DATABASE_URL: str = Field(default_factory=lambda: SecretStr(""))
 
 
 @lru_cache()
