@@ -50,11 +50,11 @@ uvicorn main:app --reload
 ⸻
 
 📝 TODO (Initial Milestone)
-	-	Create FastAPI and Streamlit boilerplate
-	-	Integrate LangGraph with FastAPI
-	-	Parse and normalize uploaded PDFs
-	-	Generate recipes from meals
-	-	Build weekly planner and grocery list
+-	Create FastAPI and Streamlit boilerplate
+-	Integrate LangGraph with FastAPI
+-	Parse and normalize uploaded PDFs
+-	Generate recipes from meals
+-	Build weekly planner and grocery list
 
 ⸻
 
