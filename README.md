@@ -42,7 +42,7 @@ cd src/app
 streamlit run app.py
 
 # 4. Run FastAPI backend (in a separate terminal)
-cd backend
+cd src/api
 uvicorn main:app --reload
 ```
 

@@ -6,6 +6,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra='ignore')
 
     LLM_PROVIDER: str = "openrouter"
+
     OPENAI_API_KEY: SecretStr = Field(default_factory=lambda: SecretStr("")) # Use SecretStr for keys
     OPENROUTER_API_KEY: SecretStr = Field(default_factory=lambda: SecretStr(""))
     BASE_URL_OPENROUTER: str = "https://openrouter.ai/api/v1"
@@ -17,7 +18,7 @@ class Settings(BaseSettings):
     DEEPSEEK_V3_MODEL: str = "deepseek/deepseek-chat-v3-0324:free"
     DEEPSEEK_R1_MODEL: str = "deepseek/deepseek-r1-zero:free"
 
-    # TODO: Add Google Gemini Keys
+    # TODO: Add Google Gemini Keys?
     
     # TODO Database configuration
     # host, port, name, user, password

@@ -1,10 +1,3 @@
-"""
-FastAPI app entrypoint.
-
-- Creates FastAPI instance.
-- Includes API routes.
-- Runs with uvicorn in dev.
-"""
 from src.api.routers.plan import router as plan_router
 from src.api.routers.recipes import router as recipes_router
 from fastapi import FastAPI

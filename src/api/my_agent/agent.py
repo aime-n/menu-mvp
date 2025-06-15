@@ -21,3 +21,4 @@ if __name__ == "__main__":
     print("Graph compiled and saved as graph.png")
     result = graph.invoke({"messages": ["Hello, how are you?"]})
     print(result)
+    

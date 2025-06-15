@@ -2,6 +2,7 @@ from langchain_openai import ChatOpenAI
 from src.api.core.llm_clients import ChatOpenRouter
 from src.api.core.config import settings
 
+# TODO logger
 
 def get_llm(model_name: str = settings.DEEPSEEK_V3_MODEL):
     """
@@ -14,7 +15,7 @@ def get_llm(model_name: str = settings.DEEPSEEK_V3_MODEL):
         # Needs credits
         return ChatOpenAI(model_name=model_name, openai_api_key=settings.OPENAI_API_KEY.get_secret_value())
     
-    # bedrock, gemini, azure, etc. can be added here in the future
+    # add bedrock, gemini, azure, etc. here in the future
     else:
         raise ValueError(f"Unsupported LLM provider: {settings.LLM_PROVIDER}")
     
