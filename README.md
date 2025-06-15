@@ -50,7 +50,6 @@ uvicorn main:app --reload
 ⸻
 
 📝 TODO (Initial Milestone)
--	Create FastAPI and Streamlit boilerplate
 -	Integrate LangGraph with FastAPI
 -	Parse and normalize uploaded PDFs
 -	Generate recipes from meals

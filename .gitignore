@@ -13,3 +13,8 @@ venv/
 .venv/
 # ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
+
+# vscode settings
+.vscode/
+# ignore Python bytecode files
+*.py[cod]
