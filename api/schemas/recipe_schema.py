@@ -1,6 +1,3 @@
-# api/schemas/recipe_schema.py
-# This is the former models.py file. No changes to the content are needed.
-
 from typing import List, Optional
 
 from sqlmodel import Field, Relationship, SQLModel
@@ -36,7 +33,7 @@ class Recipe(SQLModel, table=True):
 class RecipeCreate(SQLModel):
     name: str
     instructions: str
-    ingredients: List[tuple[str, str, str]] # (name, quantity, unit)
+    ingredients: List[Ingredient]
 
 class IngredientDetail(SQLModel):
     name: str
