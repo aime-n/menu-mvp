@@ -1,10 +1,8 @@
-import os
-from langchain.chat_models import init_chat_model
+from src.api.utils.llm_factory import get_llm
+from src.api.my_agent.utils.state import State
 
-os.environ["OPENAI_API_KEY"] = "sk-..."
 
-llm = init_chat_model("openai:gpt-4.1")
-
+llm = get_llm()
 
 def chatbot(state: State):
     return {"messages": [llm.invoke(state["messages"])]}

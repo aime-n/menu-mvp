@@ -3,7 +3,7 @@ from src.api.core.llm_clients import ChatOpenRouter
 from src.api.core.config import settings
 
 
-def get_llm(model_name: str = settings.DEEPSEEK_R1_MODEL):
+def get_llm(model_name: str = settings.DEEPSEEK_V3_MODEL):
     """
     Factory function to get an LLM instance based on configured provider.
     """
