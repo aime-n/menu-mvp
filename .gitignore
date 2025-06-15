@@ -24,3 +24,6 @@ venv/
 
 # adicionando workspace
 menu-mvp.code-workspace
+
+# env
+.env
