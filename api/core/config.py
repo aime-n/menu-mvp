@@ -5,7 +5,11 @@ from api.schemas.llm import ModelProvider, ModelName
 
 
 class Settings(BaseSettings):
-    model_config = SettingsConfigDict(env_file=".env", extra='ignore')
+    model_config = SettingsConfigDict(
+        env_file=".env", 
+        env_file_encoding = "utf-8",
+        case_sensitive=True,
+        extra='ignore')
 
     PROJECT_NAME: str = "Menu AI API"
     PROJECT_VERSION: str = "0.1.0"
@@ -23,6 +27,15 @@ class Settings(BaseSettings):
     
     # TODO Database configuration
     # host, port, name, user, password
+    SUPABASE_URL: SecretStr = Field(default_factory=lambda: SecretStr(""))
+    SUPABASE_KEY: SecretStr = Field(default_factory=lambda: SecretStr(""))
+    SUPABASE_DB_PASSWORD: SecretStr = Field(default_factory=lambda: SecretStr(""))
+    SUPABASE_HOST: str = Field(default_factory=lambda: SecretStr(""))  
+
+    def __init__(self, **values):
+        super().__init__(**values)
+        self.DATABASE_URL = f"postgresql://postgres:{self.SUPABASE_DB_PASSWORD}@{self.SUPABASE_HOST}:5432/postgres"
+
 
 @lru_cache()
 def get_settings():

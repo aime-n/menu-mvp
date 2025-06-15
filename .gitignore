@@ -21,3 +21,6 @@ venv/
 
 # excluir checkpoint pckl
 *.pckl
+
+# adicionando workspace
+menu-mvp.code-workspace

@@ -17,3 +17,5 @@ sse-starlette
 langfuse
 aiopg
 psycopg2-binary
+supabase
+sqlmodel
