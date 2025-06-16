@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from sqlmodel import Field, Relationship, SQLModel
 
@@ -29,11 +29,16 @@ class Recipe(SQLModel, table=True):
     instructions: str
     ingredients: List[Ingredient] = Relationship(back_populates="recipes", link_model=RecipeIngredientLink)
 
-# We can add Pydantic models here for API request/response validation
+
+class IngredientRecipe(SQLModel):
+    ingredient_name: str
+    quantity: str
+    unit: Optional[str] = None
+
 class RecipeCreate(SQLModel):
     name: str
     instructions: str
-    ingredients: List[Ingredient]
+    ingredients: List[IngredientRecipe] # (ingredient_name, quantity, unit)
 
 class IngredientDetail(SQLModel):
     name: str

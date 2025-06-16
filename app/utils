@@ -1,0 +1,29 @@
+# -------------------------------------------------------------------
+# ARQUIVO 1: app/utils.py
+# CRIE ESTE NOVO ARQUIVO para funções compartilhadas.
+# -------------------------------------------------------------------
+import streamlit as st
+import requests
+
+API_BASE_URL = "http://localhost:8000"
+
+@st.cache_data(ttl=60)
+def get_recipes_from_api():
+    """Busca todas as receitas da API."""
+    try:
+        response = requests.get(f"{API_BASE_URL}/recipes/")
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        st.error(f"Erro ao buscar receitas: {e}")
+        return []
+
+@st.cache_data(ttl=60)
+def get_ingredients_from_api():
+    """Busca todos os ingredientes da API."""
+    try:
+        response = requests.get(f"{API_BASE_URL}/ingredients/")
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        return []
